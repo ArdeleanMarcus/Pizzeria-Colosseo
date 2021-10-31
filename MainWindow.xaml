@@ -17,15 +17,15 @@
                 <Label Content="Veggie Pizza" Canvas.Left="267" Canvas.Top="10" AutomationProperties.Name="lbl VeggiePizza" FontWeight="Normal"/>
                 <TextBox Canvas.Left="348" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtVeggiePizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Quatro Pizza" Canvas.Left="266" Canvas.Top="41" AutomationProperties.Name="lblQuatroPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuatroPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuattroPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Canibale Pizza" Canvas.Left="469" Canvas.Top="10" AutomationProperties.Name="lblCanibalePizza" FontWeight="Normal"/>
                 <TextBox Canvas.Left="564" Canvas.Top="10" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtCanibalePizza" TextAlignment="Right" IsReadOnly="True"/>
             </Canvas>
         </GroupBox>
         <GroupBox Header="Current Sale" AutomationProperties.Name="gbSale" FontWeight="Bold" Margin="22,217,44,18">
-            <Canvas>
+            <Canvas x:Name="frmMain" Loaded="frmMain_Loaded">
                 <Label Content="Quantity" Canvas.Left="33" Canvas.Top="20" AutomationProperties.Name="lblQuantity" FontWeight="Normal"/>
-                <TextBox Canvas.Left="97" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuantity" TextAlignment="Right"/>
+                <TextBox x:Name="txtQuantity" Canvas.Left="97" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuantity" TextAlignment="Right"/>
                 <Label Content="Type" Canvas.Left="230" Canvas.Top="20" AutomationProperties.Name="lblType" FontWeight="Normal"/>
                 <ComboBox Canvas.Left="272" Canvas.Top="22" Width="100" AutomationProperties.Name="cmbType"/>
                 <Label Content="Price" Canvas.Left="431" Canvas.Top="20" AutomationProperties.Name="lblPrice" FontWeight="Normal"/>
@@ -45,14 +45,20 @@
             <MenuItem Header="Pizza">
                 <MenuItem Header="Make">
                     <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"/>
+                    Click="margPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"/>
+                    Click="pepPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"/>
+                    Click="vegPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="quatPizzaMenuItem" Header="Quattro Stagioni Pizza"/>
+                    Click="quatPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"/>
+                    Click="canPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
-                <MenuItem Header="Stop"/>
+                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
             </MenuItem>
-        </Menu>
+        </Menu>
+
 
     </Grid>
 </Window>
