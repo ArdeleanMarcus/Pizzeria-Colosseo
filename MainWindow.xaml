@@ -4,38 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ardelean_Marcus_Lab2"
+        xmlns:CustomCommands="clr-namespace:Ardelean_Marcus_Lab2.CustomCommands"
         mc:Ignorable="d"
         Title="Pizzeria Colosseo" Height="450" Width="800" AutomationProperties.Name="frmMain" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
-    <Grid>
+    <Grid MenuItem.Click="PizzaItemsShow_Click">
         <Label Content="Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="275,27,0,0" VerticalAlignment="Top" AutomationProperties.Name="lblTitle" FontSize="24" FontWeight="Bold"/>
         <GroupBox Header="Pizza Type" AutomationProperties.Name="gbPizza" FontWeight="Bold" Margin="22,74,44,253">
             <Canvas Height="120" Margin="1,0,-2,0">
                 <Label Content="Margherita Pizza" Canvas.Left="24" Canvas.Top="10" AutomationProperties.Name="lblMargheritaPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="134" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtMargheritaPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtMargheritaPizza" Canvas.Left="134" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtMargheritaPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Pepperoni Pizza" Canvas.Left="24" Canvas.Top="41" AutomationProperties.Name="lblPepperoniPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="134" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPepperoniPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtPepperoniPizza" Canvas.Left="134" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPepperoniPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Veggie Pizza" Canvas.Left="267" Canvas.Top="10" AutomationProperties.Name="lbl VeggiePizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="348" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtVeggiePizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtVeggiePizza" Canvas.Left="348" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtVeggiePizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Quatro Pizza" Canvas.Left="266" Canvas.Top="41" AutomationProperties.Name="lblQuatroPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuatroPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtQuattroPizza" Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuattroPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Canibale Pizza" Canvas.Left="469" Canvas.Top="10" AutomationProperties.Name="lblCanibalePizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="564" Canvas.Top="10" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtCanibalePizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtCanibalePizza" Canvas.Left="564" Canvas.Top="10" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtCanibalePizza" TextAlignment="Right" IsReadOnly="True"/>
             </Canvas>
         </GroupBox>
         <GroupBox Header="Current Sale" AutomationProperties.Name="gbSale" FontWeight="Bold" Margin="22,217,44,18">
-            <Canvas>
+            <Canvas x:Name="frmMain" Loaded="frmMain_Loaded">
                 <Label Content="Quantity" Canvas.Left="33" Canvas.Top="20" AutomationProperties.Name="lblQuantity" FontWeight="Normal"/>
-                <TextBox Canvas.Left="97" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuantity" TextAlignment="Right"/>
+                <TextBox x:Name="txtQuantity" Canvas.Left="97" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuantity" TextAlignment="Right"/>
                 <Label Content="Type" Canvas.Left="230" Canvas.Top="20" AutomationProperties.Name="lblType" FontWeight="Normal"/>
-                <ComboBox Canvas.Left="272" Canvas.Top="22" Width="100" AutomationProperties.Name="cmbType"/>
+                <ComboBox x:Name="cmbType" Canvas.Left="272" Canvas.Top="22" Width="100" AutomationProperties.Name="cmbType" SelectionChanged="cmbType_SelectionChanged"/>
                 <Label Content="Price" Canvas.Left="431" Canvas.Top="20" AutomationProperties.Name="lblPrice" FontWeight="Normal"/>
-                <TextBox Canvas.Left="474" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPrice" TextAlignment="Right" IsReadOnly="False"/>
-                <ListBox Height="88" Width="555" Canvas.Top="49" Canvas.Left="19" AutomationProperties.Name="lstSale"/>
+                <TextBox x:Name="txtPrice" Canvas.Left="474" Canvas.Top="24" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPrice" TextAlignment="Right" IsReadOnly="False"/>
+                <ListBox x:Name="lstSale" Height="88" Width="555" Canvas.Top="49" Canvas.Left="19" AutomationProperties.Name="lstSale"/>
                 <Label Content="Total" Canvas.Left="431" Canvas.Top="142" AutomationProperties.Name="lblTotal" FontWeight="Bold"/>
-                <TextBox Canvas.Left="474" Canvas.Top="146" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtTotal" TextAlignment="Right" IsReadOnly="True"/>
-                <Button Content="Add To Sale" Canvas.Left="608" Canvas.Top="49" AutomationProperties.Name="btnAddToSale" Width="78" FontWeight="Normal"/>
-                <Button Content="Remove Item" Canvas.Left="608" Canvas.Top="88" AutomationProperties.Name="btnRemoveItem" FontWeight="Normal"/>
-                <Button Content="Check Out" Canvas.Left="608" Canvas.Top="122" AutomationProperties.Name="btnCheckOut" FontWeight="Bold" Height="42" Width="74"/>
+                <TextBox x:Name="txtTotal" Canvas.Left="474" Canvas.Top="146" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtTotal" TextAlignment="Right" IsReadOnly="True"/>
+                <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="608" Canvas.Top="49" AutomationProperties.Name="btnAddToSale" Width="78" FontWeight="Normal" Click="btnAddToSale_Click"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="608" Canvas.Top="88" AutomationProperties.Name="btnRemoveItem" FontWeight="Normal" Click="btnRemoveItem_Click"/>
+                <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="608" Canvas.Top="122" AutomationProperties.Name="btnCheckOut" FontWeight="Bold" Height="42" Width="74" Click="btnCheckOut_Click"/>
             </Canvas>
         </GroupBox>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="81">
@@ -45,12 +46,18 @@
             <MenuItem Header="Pizza">
                 <MenuItem Header="Make">
                     <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"/>
+                    Click="margPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"/>
+                    Click="pepPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"/>
+                    Click="vegPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="quatPizzaMenuItem" Header="Quattro Stagioni Pizza"/>
+                    Click="quatPizzaMenuItem_Click" IsCheckable="True"/>
                     <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"/>
+                    Click="canPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
-                <MenuItem Header="Stop"/>
+                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click" InputGestureText="Ctrl+S" Command="CustomCommands:StopCommand.Launch"/>
+                <MenuItem Header="Inventory" Command="ApplicationCommands.Print"/>
             </MenuItem>
         </Menu>
 
