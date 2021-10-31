@@ -27,7 +27,7 @@ namespace Ardelean_Marcus_Lab2
         private int mVeggiePizza;
         private int mQuattroStagioniPizza;
         private int mCanibalePizza;
-        private object txtMargheritaPizza;
+       
 
         public MainWindow()
         {

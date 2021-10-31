@@ -11,15 +11,15 @@
         <GroupBox Header="Pizza Type" AutomationProperties.Name="gbPizza" FontWeight="Bold" Margin="22,74,44,253">
             <Canvas Height="120" Margin="1,0,-2,0">
                 <Label Content="Margherita Pizza" Canvas.Left="24" Canvas.Top="10" AutomationProperties.Name="lblMargheritaPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="134" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtMargheritaPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtMargheritaPizza" Canvas.Left="134" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtMargheritaPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Pepperoni Pizza" Canvas.Left="24" Canvas.Top="41" AutomationProperties.Name="lblPepperoniPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="134" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPepperoniPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtPepperoniPizza" Canvas.Left="134" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtPepperoniPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Veggie Pizza" Canvas.Left="267" Canvas.Top="10" AutomationProperties.Name="lbl VeggiePizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="348" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtVeggiePizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtVeggiePizza" Canvas.Left="348" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtVeggiePizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Quatro Pizza" Canvas.Left="266" Canvas.Top="41" AutomationProperties.Name="lblQuatroPizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuattroPizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtQuattroPizza" Canvas.Left="348" Canvas.Top="45" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtQuattroPizza" TextAlignment="Right" IsReadOnly="True"/>
                 <Label Content="Canibale Pizza" Canvas.Left="469" Canvas.Top="10" AutomationProperties.Name="lblCanibalePizza" FontWeight="Normal"/>
-                <TextBox Canvas.Left="564" Canvas.Top="10" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtCanibalePizza" TextAlignment="Right" IsReadOnly="True"/>
+                <TextBox x:Name="txtCanibalePizza" Canvas.Left="564" Canvas.Top="10" Text="0" TextWrapping="Wrap" Width="100" AutomationProperties.Name="txtCanibalePizza" TextAlignment="Right" IsReadOnly="True"/>
             </Canvas>
         </GroupBox>
         <GroupBox Header="Current Sale" AutomationProperties.Name="gbSale" FontWeight="Bold" Margin="22,217,44,18">
